@@ -1,0 +1,41 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage{a4wide}
+\usepackage{amsmath, amsfonts, dsfont, booktabs, graphicx, natbib, a4, times, microtype}
+\newcommand{\E}{\ensuremath{{\mathbb E}}} % expected value
+\def\func#1{\mathop{\rm #1}}
+\begin{document}
+\title{Exercise 5}
+\author{Simon A.\ Broda}
+\date{}
+\maketitle
+
+\begin{enumerate}
+
+\item
+\begin{enumerate}
+\item In the file \texttt{sp500}, construct the returns, produce a correlogram of the squared residuals, and interpret it.
+\item Perform an ARCH-LM test by regressing the returns on an intercept.
+\item Compute the historical volatility and plot it.
+\item Compute the EWMA volatility and plot it.
+\item Find a suitable GARCH/TGARCH/EGARCH model. Start with a GARCH(1, 1) or an ARCH(6) model, and determine whether it needs to be adjusted.
+\item Make a plot of the volatility estimates that your model generates, and of the NIC.
+\item Forecast the volatility for $T+1$.
+\end{enumerate}
+\item
+\begin{enumerate}
+\item Show that
+\[
+\widehat{\sigma}_{t+1,EWMA}^{2} =\lambda\widehat{\sigma}_{t,EWMA}^{2}+(1-\lambda )r_{t}^{2},\qquad 0<\lambda <1.
+\]
+\item Show that in the GARCH(1, 1) model,
+\[
+\widehat{\sigma} _{t+1}^{2}=\widehat{\sigma}^2+\hat{\alpha}(\hat{u}_{t}^{2}-\widehat{\sigma}^2)+\hat{\beta} (\widehat{\sigma} _{t}^{2}-\widehat{\sigma}^2),
+\]
+with $\widehat{\sigma}^2=\hat{\omega} /(1-\hat\alpha -\hat\beta )$.
+\item Show that in the GARCH(1, 1) model,
+\[
+\widehat{\sigma} _{t+s}^{2}=\widehat{\sigma} ^{2}+(\hat\alpha+\hat\beta)^{s-1} (\widehat{\sigma}_{t+1}^{2}-\widehat{\sigma} ^{2}).
+\]
+\end{enumerate}
+\end{enumerate}
+\end{document} 
