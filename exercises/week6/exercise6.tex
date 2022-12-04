@@ -1,0 +1,23 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage{a4wide}
+\usepackage{amsmath, amsfonts, dsfont, booktabs, graphicx, natbib, a4, times, microtype}
+\newcommand{\E}{\ensuremath{{\mathbb E}}} % expected value
+\def\func#1{\mathop{\rm #1}}
+\begin{document}
+\title{Exercise 6}
+\author{Simon A.\ Broda}
+\date{}
+\maketitle
+
+\begin{enumerate}
+
+\item 
+\begin{enumerate}
+\item In the file \texttt{sp500.wf1}, compute the historical 1\% VaR using \verb.@quantile.. Note that this uses the entire sample, rather than the last $m$ returns.
+\item Determine the Normal VaR.
+\item Determine the VaR based on a GARCH(1, 1) model with Normal innovations, and with standardized $t$ innovations.
+\item Make a plot with your VaR estimates overlaid on the negative log returns.
+\item Test your VaR forecasts for correct unconditional coverage, independence, and correct conditional coverage.
+\end{enumerate}
+\end{enumerate}
+\end{document} 
