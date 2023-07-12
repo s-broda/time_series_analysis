@@ -302,13 +302,14 @@ TSWLatexianTemp*
 
 *.evsettings
 exams/
-eviews/
-*.pdf
-*.wf1
-*.csv
-*.xls
-*.~f1
-*.wf1*
-*.xlsx
+book/
+eviews_instructions/
+#*.pdf
+#*.wf1
+#*.csv
+#*.xls
+#*.~f1
+#*.wf1*
+#*.xlsx
 *.ipynb_*
 slides/all

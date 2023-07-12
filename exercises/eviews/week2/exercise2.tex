@@ -1,0 +1,40 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage{amsmath, amsfonts, dsfont, booktabs, graphicx, natbib, a4wide, times, microtype}
+\newcommand{\E}{\ensuremath{{\mathbb E}}} % expected value
+\def\func#1{\mathop{\rm #1}}
+\begin{document}
+\title{Exercise 2}
+\author{Simon A.\ Broda}
+\date{}
+\maketitle
+
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item Open the file \texttt{simulations.xlsx}. The sheet ``White Noise'' simulates $T=1000$ observations from a (Gaussian) white noise process; i.e., 1000 uncorrelated mean-zero normals. By repeatedly pressing \texttt{F9}, you can draw new random numbers. Describe your observations.
+\item Similarly, the sheet ``Random Walk'' simulates $T=1000$ observations from a (Gaussian) random walk. Describe your observations.
+\end{enumerate}
+\item
+\begin{enumerate}
+\item Open the file \texttt{sp500.wp1}. Generate a new series \texttt{logsp500} containing the log prices, and a series \texttt{r} containing the continuously compounded returns. Make a time series plot for each, and a histogram of the returns. Describe your findings.
+\item Use the skewness and kurtosis given in the histogram to manually conduct a Jarque-Bera test.
+\item Generate a correlogram of the returns and interpret it.
+\item Test whether the first 10 autocorrelations are jointly significant at the 5\% level.
+\item Generate a correlogram of the log prices and interpret it.
+\end{enumerate}
+\item
+\begin{enumerate}
+\item Show that for the random walk $Y_t=Y_{t-1}+U_t$, where $U_t$ is white noise and $Y_0$ some constant,
+
+\[
+Y_t=Y_0+U_1+U_2+\cdots+U_t=Y_0+\sum_{s=1}^t U_t.
+\]
+\item Building on the result from the previous question, show that
+\begin{align*}
+\E[Y_t]&=Y_0,\quad\mbox{and} \\
+\mathrm{var}(Y_t)&=\sigma ^2t.
+\end{align*}
+
+\end{enumerate}
+\end{enumerate}
+\end{document} 
