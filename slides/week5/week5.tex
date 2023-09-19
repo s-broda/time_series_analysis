@@ -105,6 +105,7 @@ the \emph{\color{red}generalized ARCH} model (GARCH; Bollerslev, 1986).
 \small The null of no volatility clustering is clearly rejected ($p$-value is zero, $T\cdot R^2_{aux}=948.96$ much larger than critical value 11.07).
 \end{block}
 \end{frame}
+
 \section{Historical, RiskMetrics}\subsection*{}
 
 %TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
@@ -191,6 +192,7 @@ can be started up by an initial estimate / guess $\sigma _{0,EWMA}^{2}$.
 %BeginExpansion
 \end{frame}%
 %EndExpansion
+
 \section[ARCH/GARCH]{The ARCH and GARCH Models}\subsection*{}
 %\begin{frame}\frametitle{Conditional Expectation}
 %\begin{itemize}
@@ -435,6 +437,7 @@ we may still use the same estimation technique. This is called \emph{%
 %BeginExpansion
 \end{frame}%
 %EndExpansion
+
 \section[Testing]{Testing GARCH\ Models}\subsection*{}
 %TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
 %BeginExpansion
@@ -514,6 +517,7 @@ based on the skewness and kurtosis of $\hat{z}_{t}$.
 \section[Asymmetry]{Asymmetry and the News Impact Curve}\subsection*{}
 %TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
 %BeginExpansion
+
 \begin{frame}%
 %EndExpansion
 
@@ -538,13 +542,7 @@ $\Rightarrow$ \> shareholders (as residual claimants) perceive future cashflows\
 \> as more risky.
 \end{tabbing}
 
-\item Two popular proposals to deal with this issue:
-
-\begin{itemize}
-\item Nelson's exponential GARCH (EGARCH);
-
-\item Glosten, Jagannathan and Runkle's GJR-GARCH.
-\end{itemize}
+\item Multiple extensions exist to deal with this issue. Here we focus on Glosten, Jagannathan and Runkle's GJR-GARCH model.
 \end{itemize}
 
 %TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
@@ -701,35 +699,44 @@ is\thinspace stationary with mean $\omega /(1-\beta )$.
 \widehat{\sigma} _{t+1}^{2}=\hat{\omega}+\hat{\alpha}\hat{u}_{t}^{2}+\hat{\beta} \widehat{\sigma} _{t}^{2}.
 \]
 
-\item This can also be
-expressed as
+%\item This can also be
+%expressed as
+%\[
+%\widehat{\sigma} _{t+1}^{2}=\widehat{\sigma}^2+\hat{\alpha}(\hat{u}_{t}^{2}-\widehat{\sigma}^2)+\hat{\beta} (\widehat{\sigma} _{t}^{2}-\widehat{\sigma}^2).
+%\]
+%with $\widehat{\sigma}^2=\hat{\omega} /(1-\hat\alpha -\hat\beta )$; see the exercises.
+%
+%\item So the forecast differs from
+%the average variance $\widehat{\sigma} ^{2}$ if $\hat{u}_{t}^{2}$ or $\widehat{\sigma}
+%_{t}^{2}$ differ from $\widehat{\sigma} ^{2}$.
+\item Multi-period forecasts can be constructed recursively. In principle, one would use
 \[
-\widehat{\sigma} _{t+1}^{2}=\widehat{\sigma}^2+\hat{\alpha}(\hat{u}_{t}^{2}-\widehat{\sigma}^2)+\hat{\beta} (\widehat{\sigma} _{t}^{2}-\widehat{\sigma}^2).
+\widehat{\sigma} _{t+2}^{2}=\hat{\omega}+\hat{\alpha}\hat{u}_{t+1}^{2}+\hat{\beta} \widehat{\sigma} _{t+1}^{2},
 \]
-with $\widehat{\sigma}^2=\hat{\omega} /(1-\hat\alpha -\hat\beta )$; see the exercises.
-
-\item So the forecast differs from
-the average variance $\widehat{\sigma} ^{2}$ if $\hat{u}_{t}^{2}$ or $\widehat{\sigma}
-_{t}^{2}$ differ from $\widehat{\sigma} ^{2}$.
-
+but $\hat{u}_{t+1}^{2}$ is unobserved.
+\item Solution: replace $\hat{u}_{t+1}^{2}$ with its estimate, $\widehat{\sigma} _{t+1}^{2}$.
+\item Result:
+\[
+\widehat{\sigma} _{t+2}^{2}=\hat{\omega}+\left(\hat{\alpha}+\hat{\beta}\right) \widehat{\sigma} _{t+1}^{2}.
+\] 
 \end{itemize}
 
 %TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
 %BeginExpansion
 \end{frame}%
 %EndExpansion
-\frameit{Multi-Period Forecasts}{
-\item Regarding multi-period forecasts of the stationary GARCH(1, 1) model, it can be shown that
-\[
-\widehat{\sigma} _{t+s}^{2}=\widehat{\sigma} ^{2}+(\hat\alpha+\hat\beta)^{s-1} (\widehat{\sigma}_{t+1}^{2}-\widehat{\sigma} ^{2}),
-\]
-see the exercises.
-\item This implies $\widehat{\sigma} _{t+s}^{2}\rightarrow \widehat{\sigma} ^{2}$ as $%
-s\rightarrow \infty $.
-
-\item For RiskMetrics ($\alpha +\beta =1$, $\omega =0$), this simplifies to $\widehat{\sigma} _{t+s}^{2}=\widehat{\sigma}_{t+1}^{2}$ for
-all $s$.
-}
+%\frameit{Multi-Period Forecasts}{
+%\item Regarding multi-period forecasts of the stationary GARCH(1, 1) model, it can be shown that
+%\[
+%\widehat{\sigma} _{t+s}^{2}=\widehat{\sigma} ^{2}+(\hat\alpha+\hat\beta)^{s-1} (\widehat{\sigma}_{t+1}^{2}-\widehat{\sigma} ^{2}),
+%\]
+%see the exercises.
+%\item This implies $\widehat{\sigma} _{t+s}^{2}\rightarrow \widehat{\sigma} ^{2}$ as $%
+%s\rightarrow \infty $.
+%
+%\item For RiskMetrics ($\alpha +\beta =1$, $\omega =0$), this simplifies to $\widehat{\sigma} _{t+s}^{2}=\widehat{\sigma}_{t+1}^{2}$ for
+%all $s$.
+%}
 \section{Epilogue}\subsection*{bla}
 \begin{frame}\frametitle{Learning Goals}
 Students

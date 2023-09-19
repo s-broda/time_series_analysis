@@ -429,94 +429,26 @@ with $c=0.0036$, $\alpha_1=-0.035<0$ as desired, $\beta_1=-2.26$, $\beta_2=0.926
 %\end{frame}
 
 
-\section{Johansen's Procedure}\subsection*{}
-%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
-%BeginExpansion
-\begin{frame}%
-%EndExpansion
-
-\frametitle{Limitations of Engle-Granger Procedure:}
-
-\begin{itemize}
-\item Choice of the dependent variable $Y_t$ in Engle-Granger test is arbitrary. Selecting another $X_{it}$ as dependent variable should not
-matter asymptotically (as number of observations $T\rightarrow \infty $),
-but will make a difference in practice.
-
-\item Method can only be used if there is only a single unique cointegrating
-relation, which involves $Y_{t}$. So $(X_{2t},\ldots ,X_{kt})$ are not
-allowed to be cointegrated without $Y_{t}$.
-
-\item Although the OLS estimators $\hat{\beta}_{i}$ are consistent under
-cointegration, they do not have an asymptotic normal distribution, so
-standard inference ($t$-tests) fails.
-\end{itemize}
-
-%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
-%BeginExpansion
-\end{frame}%
-%EndExpansion
-
-
+%\section{Johansen's Procedure}\subsection*{}
 %%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
 %%BeginExpansion
 %\begin{frame}%
 %%EndExpansion
 %
-%\frametitle{Multiple Cointegration Relationships}
-%\begin{itemize}
-%\item Johansen analyzes cointegration in the VAR framework.
-%\item Suppose there are $n$ variables $Z_{it}$, which follow a VAR.
-%\item Assume there are $r$ cointegrating relationships between them. The $r$ deviations from equilibrium can be written
-%\begin{equation*}
-%\mathbf{\beta }_{j}^{\prime }\mathbf{Z}_{t}=\beta _{j1}Z_{1t}+\beta
-%_{j2}Z_{2t}+\ldots +\beta _{jn}Z_{nt},\qquad j=1,\ldots ,r,
-%\end{equation*}
-%where $\mathbf{\beta }_{i}$ are the \emph{\color{red}%
-%cointegrating vectors}
-%\item If $0<r<n$, we can rewrite the model as a VECM, with typical equation
-%\begin{equation*}
-%\Delta Z_{it}=\alpha _{i1}\mathbf{\beta }_{1}^{\prime }\mathbf{Z}%
-%_{t-1}+\ldots +\alpha _{ir}\mathbf{\beta }_{r}^{\prime }\mathbf{Z}_{t-1}+%
-%\text{lagged differences}+U_{it},
-%\end{equation*}%
-%where the $\alpha _{ij}$ are the adjustment coefficients (or loadings).
-%
-%\end{itemize}
-%%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
-%%BeginExpansion
-%\end{frame}%
-%%EndExpansion
-%
-%%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
-%%BeginExpansion
-%\begin{frame}%
-%%EndExpansion
-%
-%\frametitle{Vector Error Correction Models}
+%\frametitle{Limitations of Engle-Granger Procedure:}
 %
 %\begin{itemize}
-%\item In matrix form, the VECM is%
-%\begin{equation*}
-%\Delta \mathbf{Z}_{t}= \Pi \mathbf{Z}_{t-1}+\Gamma _{1}\Delta \mathbf{Z}%
-%_{t-1}+\ldots +\Gamma _{k-1}\Delta \mathbf{Z}_{t-k+1}+\mathbf{u}_{t},
-%\end{equation*}%
-%where $\mathbf{u}_{t}$ is vector white noise (mean zero, constant
-%variance-covariance matrix, no (cross-)autocorrelation), and where $\Pi $
-%and $\Gamma _{i}$ are $n\times n$ matrices.
+%\item Choice of the dependent variable $Y_t$ in Engle-Granger test is arbitrary. Selecting another $X_{it}$ as dependent variable should not
+%matter asymptotically (as number of observations $T\rightarrow \infty $),
+%but will make a difference in practice.
 %
-%\item If there are $r$ cointegration relationships, $\Pi$ can be decomposed as
-%\begin{equation*}
-%\Pi =\mathbf{\alpha \beta }^{\prime }=\mathbf{%
-%\alpha }_{1}\mathbf{\beta }_{1}^{\prime }+\ldots +\mathbf{\alpha }_{r}%
-%\mathbf{\beta }_{r}^{\prime },
-%\end{equation*}%
-%where $\mathbf{\alpha }_{i}$ and $\mathbf{\beta }_{i}$ are $n$-vectors, so
-%that $\mathbf{\alpha }=(\mathbf{\alpha }_{1},\ldots ,\mathbf{\alpha }_{r})$
-%and $\mathbf{\beta }=$
-%$(\mathbf{\beta }_{1},\ldots ,\mathbf{\beta }_{r})$ are $n\times r$ matrices.
-%\item As the product of two $n\times r$ matrices, $\text{rank}\;\Pi =r<n$.
-%\item $r$ is called the \emph{\color{red}cointegrating rank} (= number of separate
-%cointegrating relations).
+%\item Method can only be used if there is only a single unique cointegrating
+%relation, which involves $Y_{t}$. So $(X_{2t},\ldots ,X_{kt})$ are not
+%allowed to be cointegrated without $Y_{t}$.
+%
+%\item Although the OLS estimators $\hat{\beta}_{i}$ are consistent under
+%cointegration, they do not have an asymptotic normal distribution, so
+%standard inference ($t$-tests) fails.
 %\end{itemize}
 %
 %%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
@@ -524,149 +456,130 @@ standard inference ($t$-tests) fails.
 %\end{frame}%
 %%EndExpansion
 %
+%
+%%%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%%%BeginExpansion
+%%\begin{frame}%
+%%%EndExpansion
+%%
+%%\frametitle{Multiple Cointegration Relationships}
+%%\begin{itemize}
+%%\item Johansen analyzes cointegration in the VAR framework.
+%%\item Suppose there are $n$ variables $Z_{it}$, which follow a VAR.
+%%\item Assume there are $r$ cointegrating relationships between them. The $r$ deviations from equilibrium can be written
+%%\begin{equation*}
+%%\mathbf{\beta }_{j}^{\prime }\mathbf{Z}_{t}=\beta _{j1}Z_{1t}+\beta
+%%_{j2}Z_{2t}+\ldots +\beta _{jn}Z_{nt},\qquad j=1,\ldots ,r,
+%%\end{equation*}
+%%where $\mathbf{\beta }_{i}$ are the \emph{\color{red}%
+%%cointegrating vectors}
+%%\item If $0<r<n$, we can rewrite the model as a VECM, with typical equation
+%%\begin{equation*}
+%%\Delta Z_{it}=\alpha _{i1}\mathbf{\beta }_{1}^{\prime }\mathbf{Z}%
+%%_{t-1}+\ldots +\alpha _{ir}\mathbf{\beta }_{r}^{\prime }\mathbf{Z}_{t-1}+%
+%%\text{lagged differences}+U_{it},
+%%\end{equation*}%
+%%where the $\alpha _{ij}$ are the adjustment coefficients (or loadings).
+%%
+%%\end{itemize}
+%%%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%%%BeginExpansion
+%%\end{frame}%
+%%%EndExpansion
+%%
+%%%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%%%BeginExpansion
+%%\begin{frame}%
+%%%EndExpansion
+%%
+%%\frametitle{Vector Error Correction Models}
+%%
+%%\begin{itemize}
+%%\item In matrix form, the VECM is%
+%%\begin{equation*}
+%%\Delta \mathbf{Z}_{t}= \Pi \mathbf{Z}_{t-1}+\Gamma _{1}\Delta \mathbf{Z}%
+%%_{t-1}+\ldots +\Gamma _{k-1}\Delta \mathbf{Z}_{t-k+1}+\mathbf{u}_{t},
+%%\end{equation*}%
+%%where $\mathbf{u}_{t}$ is vector white noise (mean zero, constant
+%%variance-covariance matrix, no (cross-)autocorrelation), and where $\Pi $
+%%and $\Gamma _{i}$ are $n\times n$ matrices.
+%%
+%%\item If there are $r$ cointegration relationships, $\Pi$ can be decomposed as
+%%\begin{equation*}
+%%\Pi =\mathbf{\alpha \beta }^{\prime }=\mathbf{%
+%%\alpha }_{1}\mathbf{\beta }_{1}^{\prime }+\ldots +\mathbf{\alpha }_{r}%
+%%\mathbf{\beta }_{r}^{\prime },
+%%\end{equation*}%
+%%where $\mathbf{\alpha }_{i}$ and $\mathbf{\beta }_{i}$ are $n$-vectors, so
+%%that $\mathbf{\alpha }=(\mathbf{\alpha }_{1},\ldots ,\mathbf{\alpha }_{r})$
+%%and $\mathbf{\beta }=$
+%%$(\mathbf{\beta }_{1},\ldots ,\mathbf{\beta }_{r})$ are $n\times r$ matrices.
+%%\item As the product of two $n\times r$ matrices, $\text{rank}\;\Pi =r<n$.
+%%\item $r$ is called the \emph{\color{red}cointegrating rank} (= number of separate
+%%cointegrating relations).
+%%\end{itemize}
+%%
+%%%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%%%BeginExpansion
+%%\end{frame}%
+%%%EndExpansion
+%%
+%%%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%%%BeginExpansion
+%%\begin{frame}%
+%%%EndExpansion
+%%
+%%\frametitle{Example: Term structure of interest rates}
+%%
+%%\begin{itemize}
+%%\item Suppose that $\mathbf{Z}=(R_{1},R_{2},R_{3})^{\prime }$, where $R_{1}$
+%%is the short rate (3 months), $R_{2}$ is the medium-term rate (1 year), and $%
+%%R_{3}$ is the long-term rate (10 years).
+%%
+%%\item Assume that the individual interest rates are $I(1)$, but all spreads
+%%\begin{equation*}
+%%(R_{2t}-R_{1t}),\qquad (R_{3t}-R_{1t}),\qquad (R_{3t}-R_{2t})
+%%\end{equation*}%
+%%are stationary. Note that the third is implied by the other two.
+%%
+%%\item Then a VECM (with $k=1$ lag) becomes%
+%%\begin{eqnarray*}
+%%\Delta R_{1t} &=&\alpha _{11}(R_{2}-R_{1})_{t-1}+\alpha
+%%_{12}(R_{3}-R_{1})_{t-1}+U_{1t}, \\
+%%\Delta R_{2t} &=&\alpha _{21}(R_{2}-R_{1})_{t-1}+\alpha
+%%_{22}(R_{3}-R_{1})_{t-1}+U_{2t}, \\
+%%\Delta R_{3t} &=&\alpha _{31}(R_{2}-R_{1})_{t-1}+\alpha
+%%_{32}(R_{3}-R_{1})_{t-1}+U_{3t},
+%%\end{eqnarray*}%
+%%so $r=2$, $\mathbf{\beta }_{1}=(-1,1,0)^{\prime }$ and $\mathbf{\beta }%
+%%_{2}=(-1,0,1)^{\prime }$.
+%%\end{itemize}
+%%
+%%%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%%%BeginExpansion
+%%\end{frame}%
+%%%EndExpansion
+%%
 %%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
 %%BeginExpansion
 %\begin{frame}%
 %%EndExpansion
 %
-%\frametitle{Example: Term structure of interest rates}
+%\frametitle{Johansen Procedure}
 %
 %\begin{itemize}
-%\item Suppose that $\mathbf{Z}=(R_{1},R_{2},R_{3})^{\prime }$, where $R_{1}$
-%is the short rate (3 months), $R_{2}$ is the medium-term rate (1 year), and $%
-%R_{3}$ is the long-term rate (10 years).
+%\item An alternative is to use \er{Johansen's procedure}.
+%\item Johansen has derived the MLE of the general VECM with normally distributed errors $\mathbf{u}_{t}$ and $k$ variables.
+%\item This facilitates likelihood ratio tests for $H_{0r}$: ``$r$ or fewer cointegrating relationships'' against the alternative ``more than $r$''
+%\item The test is known as the \emph{\color{red}Johansen trace test}. The test
+%statistics $\lambda _{trace}(r)$ can be expressed in terms of particular
+%eigenvalues $\hat{\lambda}_{i}$. Their asymptotic distribution under the
+%null is a multivariate version of the
+%Dickey-Fuller distribution.
 %
-%\item Assume that the individual interest rates are $I(1)$, but all spreads
-%\begin{equation*}
-%(R_{2t}-R_{1t}),\qquad (R_{3t}-R_{1t}),\qquad (R_{3t}-R_{2t})
-%\end{equation*}%
-%are stationary. Note that the third is implied by the other two.
-%
-%\item Then a VECM (with $k=1$ lag) becomes%
-%\begin{eqnarray*}
-%\Delta R_{1t} &=&\alpha _{11}(R_{2}-R_{1})_{t-1}+\alpha
-%_{12}(R_{3}-R_{1})_{t-1}+U_{1t}, \\
-%\Delta R_{2t} &=&\alpha _{21}(R_{2}-R_{1})_{t-1}+\alpha
-%_{22}(R_{3}-R_{1})_{t-1}+U_{2t}, \\
-%\Delta R_{3t} &=&\alpha _{31}(R_{2}-R_{1})_{t-1}+\alpha
-%_{32}(R_{3}-R_{1})_{t-1}+U_{3t},
-%\end{eqnarray*}%
-%so $r=2$, $\mathbf{\beta }_{1}=(-1,1,0)^{\prime }$ and $\mathbf{\beta }%
-%_{2}=(-1,0,1)^{\prime }$.
+%\item We reject for large positive values of the test statistic; critical
+%values and $p$-values are built into EViews and similar programs.
 %\end{itemize}
-%
-%%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
-%%BeginExpansion
-%\end{frame}%
-%%EndExpansion
-%
-%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
-%BeginExpansion
-\begin{frame}%
-%EndExpansion
-
-\frametitle{Johansen Procedure}
-
-\begin{itemize}
-\item An alternative is to use \er{Johansen's procedure}.
-\item Johansen has derived the MLE of the general VECM with normally distributed errors $\mathbf{u}_{t}$ and $k$ variables.
-\item This facilitates likelihood ratio tests for $H_{0r}$: ``$r$ or fewer cointegrating relationships'' against the alternative ``more than $r$''
-\item The test is known as the \emph{\color{red}Johansen trace test}. The test
-statistics $\lambda _{trace}(r)$ can be expressed in terms of particular
-eigenvalues $\hat{\lambda}_{i}$. Their asymptotic distribution under the
-null is a multivariate version of the
-Dickey-Fuller distribution.
-
-\item We reject for large positive values of the test statistic; critical
-values and $p$-values are built into EViews and similar programs.
-\end{itemize}
-
-%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
-%BeginExpansion
-\end{frame}%
-%EndExpansion
-
-%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
-%BeginExpansion
-\begin{frame}%
-%EndExpansion
-
-\frametitle{Johansen's cointegration test}
-
-These tests may be used to estimate the cointegrating rank $r$ in the
-following way:
-
-\begin{enumerate}
-\item Start with $r=0$;
-
-\item Test $H_{0r}$ with $\lambda _{trace}(r)$;
-
-\item If $H_{0r}$ is not rejected, then $\hat{r}=r$; if it is rejected,
-replace $r$ by $r+1$ and go back to step 2;
-
-\item If $H_{0r}$ is rejected for all $r=0,1,\ldots ,k-1$, then conclude $%
-\hat{r}=k$ (this corresponds to a stationary system).
-\end{enumerate}
-
-%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
-%BeginExpansion
-\end{frame}%
-%EndExpansion
-
-%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
-%BeginExpansion
-\begin{frame}%
-%EndExpansion
-
-\frametitle{Treatment of constant and linear trend}
-
-Just like with the Dickey-Fuller test, we have to allow for a constant and
-possibly a linear trend in the VECM. Eviews distinguishes five cases:
-
-\begin{itemize}
-\item[1] No constant, no trend. This implies that the variables have mean zero. Rarely applicable.
-
-\item[2] Constant in the cointegrating relations, no trend. Applicable when the data have no trend (interest rates, inflation, real
-exchange rates).
-
-\item[3] Constant in the VECM equation. This leads to a drift, so applicable for trending series (real gdp, stock prices). This is the default, for good reasons.
-\item[4] Constant in VECM, trend in cointegration relations. Similar to 3, but hard to interpret.
-
-\item[5] Trend in the VECM equation. Leads to a quadratic trend. Rarely applicable.
-\end{itemize}
-
-%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
-%BeginExpansion
-\end{frame}%
-%EndExpansion
-
-%%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
-%%BeginExpansion
-%\begin{frame}%
-%%EndExpansion
-%
-%\frametitle{Example: Spot and forward DMark/US\$ exchange rates}
-%
-%Consider the same exchange-rate example but now with $\mathbf{Z}%
-%_{t}=(s_{t},f_{1t},f_{3t})^{\prime }$, where $f_{3t}$ is the log-3-month
-%forward rate.
-%
-%Trace test results, with restricted constant (option 2) and $k-1=2$ lagged
-%differences:
-%
-%\begin{center}
-%\begin{tabular}{cccc}
-%\hline\hline
-%$\quad r\quad $ & $\lambda _{trace}(r)$ & $5\%$ crit. val. & $p$-value \\
-%\hline\hline
-%$0$ & $84.51$ & $35.19$ & $0.000$ \\
-%$1$ & $26.00$ & $20.26$ & $0.007$ \\
-%$2$ & $4.367$ & $9.165$ & $0.360$ \\ \hline\hline
-%\end{tabular}
-%\end{center}
-%
-%This leads to the conclusion of $\hat{r}=2$, i.e., two different
-%cointegrating relations between these three series.
 %
 %%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
 %%BeginExpansion
@@ -678,100 +591,22 @@ exchange rates).
 %\begin{frame}%
 %%EndExpansion
 %
-%\frametitle{Multiple cointegrating vectors, identification}
+%\frametitle{Johansen's cointegration test}
 %
-%\begin{itemize}
-%\item When $r=1$, a cointegrating relation $\mathbf{\beta }^{\prime }\mathbf{%
-%Z}_{t}$ can be easily interpreted and identified by normalizing the first
-%component of $\mathbf{\beta }$ to $-1$, such that%
-%\begin{equation*}
-%\mathbf{\beta }^{\prime }\mathbf{Z}_{t}=-1Z_{1t}+\beta _{2}Z_{2t}+\ldots
-%+\beta _{n}Z_{nt},
-%\end{equation*}%
-%so that the equilibrium relationship reads $Z_{1}=\beta
-%_{2}Z_{2}+\ldots +\beta _{n}Z_{n}$ (as in the single equation ECM).
-%Note that EViews normalizes to $1$ instead of $-1$.
-%
-%\item When $r>2$, this is no longer sufficient to separate the different
-%relations $\mathbf{\beta }_{i}^{\prime }\mathbf{Z}_{t},i=1,\ldots ,r$. Note
-%that if both $\mathbf{\beta }_{1}^{\prime }\mathbf{Z}_{t}$ and $\mathbf{%
-%\beta }_{2}^{\prime }\mathbf{Z}_{t}$ are stationary, then so is
-%\begin{equation*}
-%\mathbf{\beta }_{3}^{\prime }\mathbf{Z}_{t}=a\mathbf{\beta }_{1}^{\prime }%
-%\mathbf{Z}_{t}+b\mathbf{\beta }_{2}^{\prime }\mathbf{Z}_{t},
-%\end{equation*}%
-%for any $a$ and $b$.
-%\end{itemize}
-%
-%%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
-%%BeginExpansion
-%\end{frame}%
-%%EndExpansion
-%
-%%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
-%%BeginExpansion
-%\begin{frame}[shrink]%
-%%EndExpansion
-%
-%\frametitle{Multiple cointegrating vectors, identification}
-%
-%\begin{itemize}
-%\item In order to avoid this, we need to impose \emph{\color{red}identifying
-%restrictions}, that make each $\mathbf{\beta }_{i}$ unique. The easiest way
-%to accomplish this is to impose%
-%\begin{eqnarray*}
-%\beta _{ii} &=&-1,\qquad i=1,\ldots ,r, \\
-%\beta _{ij} &=&0,\qquad 1\leq j\leq r,\quad j\neq i,\qquad i=1,\ldots ,r.
-%\end{eqnarray*}%
-%This is equivalent to solving the first $r$ series of
-%$\mathbf{Z}_{t}$ in terms of the last $n-r$ series, i.e.,
-%$\mathbf{\beta }'=[-\mathbf{I}_r\quad \mathbf{\beta}^{\ast\prime}]$,
-%where $ \mathbf{\beta}^{\ast}$ has dimension $n-r\times r$.
-%
-%\item In the spot-forward exchange rate example, an identified
-%representation is:%
-%\begin{eqnarray*}
-%s_{t} &=&0.018+0.973f_{3t}+e_{1t}, \\
-%f_{1t} &=&0.012+0.983f_{3t}+e_{2t}.
-%\end{eqnarray*}%
-%This implies the relation $s_{t}=0.006+0.990f_{1t}+e_{3t}$.
-%
-%\item Further restrictions are over-identifying, and can be tested by ($\chi
-%^{2}$) likelihood ratio tests.
-%\end{itemize}
-%
-%%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
-%%BeginExpansion
-%\end{frame}%
-%\section*{Example}\subsection*{bla}
-%%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
-%%BeginExpansion
-%\begin{frame}[shrink]%
-%%EndExpansion
-%
-%\frametitle{Example: Spot and forward DMark/US\$ exchange rates}
-%
-%$s_{t}$ and $f_{1t}$ are logarithms of the spot and one-month forward
-%exchange rates of the DMark versus US dollar, January 1996 -- December 2006
-%(monthly data).
-%
-%Idea: Spot and forward rate are linked by the no-arbitrage relation
-%$e^{-r_{USD,t}}S_t=e^{-r_{DM,t}}F_t$, or $s_t=r_{USD,t}-r_{DM,t}+f_t$. If $r_{USD,t}-r_{DM,t}$ is stationary, $s_t$ and $f_t$ are cointegrated.
+%These tests may be used to estimate the cointegrating rank $r$ in the
+%following way:
 %
 %\begin{enumerate}
-%\item \emph{Test the unit root hypothesis for both variables:} ADF tests for
-%$s_{t}$ and $f_{1t}$ are $-0.951~[0.77]$, for both series (constant, no
-%trend; lags determined by Schwarz criterion).
+%\item Start with $r=0$;
 %
-%\item \emph{Apply the Engle-Granger procedure: }OLS estimation gives $%
-%s_{t}=0.002+0.998f_{1t}+\hat{u}_{t}$. The ADF test statistic on this
-%residual series is $-2.099$, which means that we cannot reject the null of
-%no cointegration.
+%\item Test $H_{0r}$ with $\lambda _{trace}(r)$;
+%
+%\item If $H_{0r}$ is not rejected, then $\hat{r}=r$; if it is rejected,
+%replace $r$ by $r+1$ and go back to step 2;
+%
+%\item If $H_{0r}$ is rejected for all $r=0,1,\ldots ,k-1$, then conclude $%
+%\hat{r}=k$ (this corresponds to a stationary system).
 %\end{enumerate}
-%
-%\emph{Explanation}: the forward premium $f_{1t}-s_{t}$ has a very small
-%scale, so that $s_{t}$ and $f_{1t}$ are almost indistinguishable visibly,
-%but it is too persistent to be stationary.
 %
 %%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
 %%BeginExpansion
@@ -782,48 +617,213 @@ exchange rates).
 %%BeginExpansion
 %\begin{frame}%
 %%EndExpansion
-%\begin{block}{Spot and forward rates, forward premium, and residual}
-%\centerline{\includegraphics[height=3in]{spotforward}}
-%\end{block}
+%
+%\frametitle{Treatment of constant and linear trend}
+%
+%Just like with the Dickey-Fuller test, we have to allow for a constant and
+%possibly a linear trend in the VECM. Eviews distinguishes five cases:
+%
+%\begin{itemize}
+%\item[1] No constant, no trend. This implies that the variables have mean zero. Rarely applicable.
+%
+%\item[2] Constant in the cointegrating relations, no trend. Applicable when the data have no trend (interest rates, inflation, real
+%exchange rates).
+%
+%\item[3] Constant in the VECM equation. This leads to a drift, so applicable for trending series (real gdp, stock prices). This is the default, for good reasons.
+%\item[4] Constant in VECM, trend in cointegration relations. Similar to 3, but hard to interpret.
+%
+%\item[5] Trend in the VECM equation. Leads to a quadratic trend. Rarely applicable.
+%\end{itemize}
+%
 %%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
 %%BeginExpansion
 %\end{frame}%
 %%EndExpansion
-\section*{Example continued}
-\begin{frame}[shrink]\frametitle{Example continued}
-\begin{itemize}
-\item[Step 1] Apply Johansen integration test.\\ Choose Option 3 (unrestricted constant) and one lagged $\Delta$ on RHS (lag specification \texttt{1 1}), because that's what we found in the Engle-Granger approach.
-\begin{block}{Johansen test}
-\begin{center}
-\includegraphics[width=0.35\textwidth]{johansen.png}
-\end{center}
-\end{block}
-$H_{00}$: ``No Cointegration'' is rejected. $H_{01}$: ``One cointegrating relationship'' is not. Conclusion: there is one cointegrating (=equilibrium) relationship.
-\end{itemize}
-\end{frame}
-
-\begin{frame}[shrink]\frametitle{Example continued}
-\begin{itemize}
-\item[Step 2] Estimate VECM. Choose ``1 cointegrating relationship'', and lag specification \texttt{1 1}.
-\begin{center}
-\includegraphics[height=0.6\textheight]{vecm3.png}
-\end{center}
-\end{itemize}
-\end{frame}
-
-\begin{frame}\frametitle{Example continued}
-\begin{itemize}
-\item Final model is
-{\tiny
-\begin{align*}
-\Delta \textrm{loil}_t&=0.0034-0.034(\textrm{loil}_{t-1}-0.914\textrm{lgold}_{t-1}+2.19)+0.25\Delta\textrm{loil}_{t-1}+0.05\Delta\textrm{lgold}_{t-1}+e_{1t}\\
-\Delta \textrm{lgold}_t&=0.0054-0.007(\textrm{loil}_{t-1}-0.914\textrm{lgold}_{t-1}+2.19)+0.049\Delta\textrm{loil}_{t-1}+0.019\Delta\textrm{lgold}_{t-1}+e_{2t}
-\end{align*}}
-\item Note how similar the first equation is to what we found with Engle-Granger! Here, too, $\alpha_2=-0.007$ is insignificant, so we could ignore the 2nd equation.
-\item The cointegrating vector is $(1, -0.914)$.
-\item Interpretation: there is an equilibrium relationship between \textrm{loil} and \textrm{lgold}. In case of a disequilibrium, \textrm{loil} adjusts towards the equilibrium. The adjustment amounts to 3.4\% per period.
-\end{itemize}
-\end{frame}
+%
+%%%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%%%BeginExpansion
+%%\begin{frame}%
+%%%EndExpansion
+%%
+%%\frametitle{Example: Spot and forward DMark/US\$ exchange rates}
+%%
+%%Consider the same exchange-rate example but now with $\mathbf{Z}%
+%%_{t}=(s_{t},f_{1t},f_{3t})^{\prime }$, where $f_{3t}$ is the log-3-month
+%%forward rate.
+%%
+%%Trace test results, with restricted constant (option 2) and $k-1=2$ lagged
+%%differences:
+%%
+%%\begin{center}
+%%\begin{tabular}{cccc}
+%%\hline\hline
+%%$\quad r\quad $ & $\lambda _{trace}(r)$ & $5\%$ crit. val. & $p$-value \\
+%%\hline\hline
+%%$0$ & $84.51$ & $35.19$ & $0.000$ \\
+%%$1$ & $26.00$ & $20.26$ & $0.007$ \\
+%%$2$ & $4.367$ & $9.165$ & $0.360$ \\ \hline\hline
+%%\end{tabular}
+%%\end{center}
+%%
+%%This leads to the conclusion of $\hat{r}=2$, i.e., two different
+%%cointegrating relations between these three series.
+%%
+%%%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%%%BeginExpansion
+%%\end{frame}%
+%%%EndExpansion
+%%
+%%%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%%%BeginExpansion
+%%\begin{frame}%
+%%%EndExpansion
+%%
+%%\frametitle{Multiple cointegrating vectors, identification}
+%%
+%%\begin{itemize}
+%%\item When $r=1$, a cointegrating relation $\mathbf{\beta }^{\prime }\mathbf{%
+%%Z}_{t}$ can be easily interpreted and identified by normalizing the first
+%%component of $\mathbf{\beta }$ to $-1$, such that%
+%%\begin{equation*}
+%%\mathbf{\beta }^{\prime }\mathbf{Z}_{t}=-1Z_{1t}+\beta _{2}Z_{2t}+\ldots
+%%+\beta _{n}Z_{nt},
+%%\end{equation*}%
+%%so that the equilibrium relationship reads $Z_{1}=\beta
+%%_{2}Z_{2}+\ldots +\beta _{n}Z_{n}$ (as in the single equation ECM).
+%%Note that EViews normalizes to $1$ instead of $-1$.
+%%
+%%\item When $r>2$, this is no longer sufficient to separate the different
+%%relations $\mathbf{\beta }_{i}^{\prime }\mathbf{Z}_{t},i=1,\ldots ,r$. Note
+%%that if both $\mathbf{\beta }_{1}^{\prime }\mathbf{Z}_{t}$ and $\mathbf{%
+%%\beta }_{2}^{\prime }\mathbf{Z}_{t}$ are stationary, then so is
+%%\begin{equation*}
+%%\mathbf{\beta }_{3}^{\prime }\mathbf{Z}_{t}=a\mathbf{\beta }_{1}^{\prime }%
+%%\mathbf{Z}_{t}+b\mathbf{\beta }_{2}^{\prime }\mathbf{Z}_{t},
+%%\end{equation*}%
+%%for any $a$ and $b$.
+%%\end{itemize}
+%%
+%%%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%%%BeginExpansion
+%%\end{frame}%
+%%%EndExpansion
+%%
+%%%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%%%BeginExpansion
+%%\begin{frame}[shrink]%
+%%%EndExpansion
+%%
+%%\frametitle{Multiple cointegrating vectors, identification}
+%%
+%%\begin{itemize}
+%%\item In order to avoid this, we need to impose \emph{\color{red}identifying
+%%restrictions}, that make each $\mathbf{\beta }_{i}$ unique. The easiest way
+%%to accomplish this is to impose%
+%%\begin{eqnarray*}
+%%\beta _{ii} &=&-1,\qquad i=1,\ldots ,r, \\
+%%\beta _{ij} &=&0,\qquad 1\leq j\leq r,\quad j\neq i,\qquad i=1,\ldots ,r.
+%%\end{eqnarray*}%
+%%This is equivalent to solving the first $r$ series of
+%%$\mathbf{Z}_{t}$ in terms of the last $n-r$ series, i.e.,
+%%$\mathbf{\beta }'=[-\mathbf{I}_r\quad \mathbf{\beta}^{\ast\prime}]$,
+%%where $ \mathbf{\beta}^{\ast}$ has dimension $n-r\times r$.
+%%
+%%\item In the spot-forward exchange rate example, an identified
+%%representation is:%
+%%\begin{eqnarray*}
+%%s_{t} &=&0.018+0.973f_{3t}+e_{1t}, \\
+%%f_{1t} &=&0.012+0.983f_{3t}+e_{2t}.
+%%\end{eqnarray*}%
+%%This implies the relation $s_{t}=0.006+0.990f_{1t}+e_{3t}$.
+%%
+%%\item Further restrictions are over-identifying, and can be tested by ($\chi
+%%^{2}$) likelihood ratio tests.
+%%\end{itemize}
+%%
+%%%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%%%BeginExpansion
+%%\end{frame}%
+%%\section*{Example}\subsection*{bla}
+%%%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%%%BeginExpansion
+%%\begin{frame}[shrink]%
+%%%EndExpansion
+%%
+%%\frametitle{Example: Spot and forward DMark/US\$ exchange rates}
+%%
+%%$s_{t}$ and $f_{1t}$ are logarithms of the spot and one-month forward
+%%exchange rates of the DMark versus US dollar, January 1996 -- December 2006
+%%(monthly data).
+%%
+%%Idea: Spot and forward rate are linked by the no-arbitrage relation
+%%$e^{-r_{USD,t}}S_t=e^{-r_{DM,t}}F_t$, or $s_t=r_{USD,t}-r_{DM,t}+f_t$. If $r_{USD,t}-r_{DM,t}$ is stationary, $s_t$ and $f_t$ are cointegrated.
+%%
+%%\begin{enumerate}
+%%\item \emph{Test the unit root hypothesis for both variables:} ADF tests for
+%%$s_{t}$ and $f_{1t}$ are $-0.951~[0.77]$, for both series (constant, no
+%%trend; lags determined by Schwarz criterion).
+%%
+%%\item \emph{Apply the Engle-Granger procedure: }OLS estimation gives $%
+%%s_{t}=0.002+0.998f_{1t}+\hat{u}_{t}$. The ADF test statistic on this
+%%residual series is $-2.099$, which means that we cannot reject the null of
+%%no cointegration.
+%%\end{enumerate}
+%%
+%%\emph{Explanation}: the forward premium $f_{1t}-s_{t}$ has a very small
+%%scale, so that $s_{t}$ and $f_{1t}$ are almost indistinguishable visibly,
+%%but it is too persistent to be stationary.
+%%
+%%%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%%%BeginExpansion
+%%\end{frame}%
+%%%EndExpansion
+%%
+%%%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%%%BeginExpansion
+%%\begin{frame}%
+%%%EndExpansion
+%%\begin{block}{Spot and forward rates, forward premium, and residual}
+%%\centerline{\includegraphics[height=3in]{spotforward}}
+%%\end{block}
+%%%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%%%BeginExpansion
+%%\end{frame}%
+%%%EndExpansion
+%\section*{Example continued}
+%\begin{frame}[shrink]\frametitle{Example continued}
+%\begin{itemize}
+%\item[Step 1] Apply Johansen integration test.\\ Choose Option 3 (unrestricted constant) and one lagged $\Delta$ on RHS (lag specification \texttt{1 1}), because that's what we found in the Engle-Granger approach.
+%\begin{block}{Johansen test}
+%\begin{center}
+%\includegraphics[width=0.35\textwidth]{johansen.png}
+%\end{center}
+%\end{block}
+%$H_{00}$: ``No Cointegration'' is rejected. $H_{01}$: ``One cointegrating relationship'' is not. Conclusion: there is one cointegrating (=equilibrium) relationship.
+%\end{itemize}
+%\end{frame}
+%
+%\begin{frame}[shrink]\frametitle{Example continued}
+%\begin{itemize}
+%\item[Step 2] Estimate VECM. Choose ``1 cointegrating relationship'', and lag specification \texttt{1 1}.
+%\begin{center}
+%\includegraphics[height=0.6\textheight]{vecm3.png}
+%\end{center}
+%\end{itemize}
+%\end{frame}
+%
+%\begin{frame}\frametitle{Example continued}
+%\begin{itemize}
+%\item Final model is
+%{\tiny
+%\begin{align*}
+%\Delta \textrm{loil}_t&=0.0034-0.034(\textrm{loil}_{t-1}-0.914\textrm{lgold}_{t-1}+2.19)+0.25\Delta\textrm{loil}_{t-1}+0.05\Delta\textrm{lgold}_{t-1}+e_{1t}\\
+%\Delta \textrm{lgold}_t&=0.0054-0.007(\textrm{loil}_{t-1}-0.914\textrm{lgold}_{t-1}+2.19)+0.049\Delta\textrm{loil}_{t-1}+0.019\Delta\textrm{lgold}_{t-1}+e_{2t}
+%\end{align*}}
+%\item Note how similar the first equation is to what we found with Engle-Granger! Here, too, $\alpha_2=-0.007$ is insignificant, so we could ignore the 2nd equation.
+%\item The cointegrating vector is $(1, -0.914)$.
+%\item Interpretation: there is an equilibrium relationship between \textrm{loil} and \textrm{lgold}. In case of a disequilibrium, \textrm{loil} adjusts towards the equilibrium. The adjustment amounts to 3.4\% per period.
+%\end{itemize}
+%\end{frame}
 \section{Epilogue}
 \begin{frame}
 \frametitle{Learning Goals}

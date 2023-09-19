@@ -108,57 +108,57 @@ This one seems fine without any lagged differences. We notice that $u_{t-1}$ is 
 \]
 Interpretation: there is an equilibrium relationship between \texttt{loil} and \texttt{lgold}, with cointegrating vector $(1, -0.926)$. In case of a disequilibrium, \texttt{loil} adjusts towards the equilibrium. The
 adjustment amounts to 3.5\% of the disequilibrium per period.
-\item We now repeat the analysis, but using Johansen's procedure, rather than Engle and Granger's. \\
-\noindent\textbf{Step 0} The first step is to pick a lag length. In slides, we didn't do this: we just picked a lag length of 1 because that's what we used in the Engle-Granger procedure. If we hadn't done Engle-Granger and started with Johansen right away, we'd need a way to do this.
-The easiest way is the following: open the variables as a group like before, then click on \texttt{Proc$\rightarrow$Make Vector Autoregression}.
-\begin{center}
-\includegraphics[width=0.8\textwidth]{johanseneviews1}
-\includegraphics[width=0.4\textwidth]{johanseneviews2}
-\end{center}
-Keep the defaults, hit enter, and ignore the output. We're just doing this to get to the multivariate information criteria, by clicking \texttt{View$\rightarrow$Lag Structure$\rightarrow$Lag length criteria}:
-\begin{center}
-\includegraphics[width=0.8\textwidth]{johanseneviews3}
-\end{center}
-This yields
-\begin{center}
-\includegraphics[width=0.6\textwidth]{johanseneviews4}
-\end{center}
-Most criteria agree on 2 lags. For technical reasons (this is a VAR, not a VECM), this means that we need 1 lag in the Johansen test and in the VECM.\\
-\noindent\textbf{Step 1} Conduct the Johansen test. Open the variables as a group as before, then do
-\begin{center}
-\includegraphics[width=0.7\textwidth]{johanseneviews5}
-\end{center}
-Choose Option 3 to allow for a trend, and specify the lag interval as \texttt{1 1} (this means all lagged differences from lag 1 to lag 1), because that is what the information criteria suggested.
-\begin{center}
-\includegraphics[width=0.4\textwidth]{johanseneviews6}
-\end{center}
-Result:
-\begin{center}
-\includegraphics[width=0.6\textwidth]{johansen}
-\end{center}
-The test for $H_{00}$: ``No cointegration''rejects. The test for $H_{01}$: ``1 cointegration relationship'' accepts. Conclusion: there is one cointegrating relationship. It the latter test had rejected as well, then that would mean that the model is stationary; i.e., the variables aren't integrated in the first place.\newpage
-\noindent\textbf{Step 2}: Make a vector autoregression. In the group window, click on \texttt{Proc$\rightarrow$Make Vector Autoregression}.
-\begin{center}
-\includegraphics[width=0.7\textwidth]{johanseneviews7}
-\end{center}
-Choose “Vector Error Correction”, and set the lag interval to match what the criteria found.
-\begin{center}
-\includegraphics[width=0.4\textwidth]{johanseneviews8}
-\end{center}
-Go to the \texttt{Cointegration} tab, choose the same model as for the Johansen test (so 3 in this case), and set the number of cointegrating relationships to what the test found (so 1 in this case).
-\begin{center}
-\includegraphics[width=0.4\textwidth]{johanseneviews9}
-\end{center}
-Result:
-\begin{center}
-\includegraphics[width=0.4\textwidth]{vecm3_colors}
-\end{center}
-The red part is the VECM equation for \texttt{LOIL}, the green part is that for \texttt{LGOLD}, and the blue part is the cointegrating relationship. The cointegrating vector is $(1, -0.914)$. The results are remarkably similar to what we found with the Engle-Grander procedure. We could again ignore the equation for \texttt{LGOLD}, because the adjustment coefficient ($\alpha_2$, in yellow) is insignificant ($t$-statistic 1.04). The final model is
-{\tiny
-\begin{align*}
-\Delta \textrm{loil}_t&=0.0034-0.034(\textrm{loil}_{t-1}-0.914\textrm{lgold}_{t-1}+2.19)+0.25\Delta\textrm{loil}_{t-1}+0.05\Delta\textrm{lgold}_{t-1}+e_{1t}\\
-\Delta \textrm{lgold}_t&=0.0054-0.007(\textrm{loil}_{t-1}-0.914\textrm{lgold}_{t-1}+2.19)+0.049\Delta\textrm{loil}_{t-1}+0.019\Delta\textrm{lgold}_{t-1}+e_{2t}
-\end{align*}}
+%\item We now repeat the analysis, but using Johansen's procedure, rather than Engle and Granger's. \\
+%\noindent\textbf{Step 0} The first step is to pick a lag length. In slides, we didn't do this: we just picked a lag length of 1 because that's what we used in the Engle-Granger procedure. If we hadn't done Engle-Granger and started with Johansen right away, we'd need a way to do this.
+%The easiest way is the following: open the variables as a group like before, then click on \texttt{Proc$\rightarrow$Make Vector Autoregression}.
+%\begin{center}
+%\includegraphics[width=0.8\textwidth]{johanseneviews1}
+%\includegraphics[width=0.4\textwidth]{johanseneviews2}
+%\end{center}
+%Keep the defaults, hit enter, and ignore the output. We're just doing this to get to the multivariate information criteria, by clicking \texttt{View$\rightarrow$Lag Structure$\rightarrow$Lag length criteria}:
+%\begin{center}
+%\includegraphics[width=0.8\textwidth]{johanseneviews3}
+%\end{center}
+%This yields
+%\begin{center}
+%\includegraphics[width=0.6\textwidth]{johanseneviews4}
+%\end{center}
+%Most criteria agree on 2 lags. For technical reasons (this is a VAR, not a VECM), this means that we need 1 lag in the Johansen test and in the VECM.\\
+%\noindent\textbf{Step 1} Conduct the Johansen test. Open the variables as a group as before, then do
+%\begin{center}
+%\includegraphics[width=0.7\textwidth]{johanseneviews5}
+%\end{center}
+%Choose Option 3 to allow for a trend, and specify the lag interval as \texttt{1 1} (this means all lagged differences from lag 1 to lag 1), because that is what the information criteria suggested.
+%\begin{center}
+%\includegraphics[width=0.4\textwidth]{johanseneviews6}
+%\end{center}
+%Result:
+%\begin{center}
+%\includegraphics[width=0.6\textwidth]{johansen}
+%\end{center}
+%The test for $H_{00}$: ``No cointegration''rejects. The test for $H_{01}$: ``1 cointegration relationship'' accepts. Conclusion: there is one cointegrating relationship. It the latter test had rejected as well, then that would mean that the model is stationary; i.e., the variables aren't integrated in the first place.\newpage
+%\noindent\textbf{Step 2}: Make a vector autoregression. In the group window, click on \texttt{Proc$\rightarrow$Make Vector Autoregression}.
+%\begin{center}
+%\includegraphics[width=0.7\textwidth]{johanseneviews7}
+%\end{center}
+%Choose “Vector Error Correction”, and set the lag interval to match what the criteria found.
+%\begin{center}
+%\includegraphics[width=0.4\textwidth]{johanseneviews8}
+%\end{center}
+%Go to the \texttt{Cointegration} tab, choose the same model as for the Johansen test (so 3 in this case), and set the number of cointegrating relationships to what the test found (so 1 in this case).
+%\begin{center}
+%\includegraphics[width=0.4\textwidth]{johanseneviews9}
+%\end{center}
+%Result:
+%\begin{center}
+%\includegraphics[width=0.4\textwidth]{vecm3_colors}
+%\end{center}
+%The red part is the VECM equation for \texttt{LOIL}, the green part is that for \texttt{LGOLD}, and the blue part is the cointegrating relationship. The cointegrating vector is $(1, -0.914)$. The results are remarkably similar to what we found with the Engle-Grander procedure. We could again ignore the equation for \texttt{LGOLD}, because the adjustment coefficient ($\alpha_2$, in yellow) is insignificant ($t$-statistic 1.04). The final model is
+%{\tiny
+%\begin{align*}
+%\Delta \textrm{loil}_t&=0.0034-0.034(\textrm{loil}_{t-1}-0.914\textrm{lgold}_{t-1}+2.19)+0.25\Delta\textrm{loil}_{t-1}+0.05\Delta\textrm{lgold}_{t-1}+e_{1t}\\
+%\Delta \textrm{lgold}_t&=0.0054-0.007(\textrm{loil}_{t-1}-0.914\textrm{lgold}_{t-1}+2.19)+0.049\Delta\textrm{loil}_{t-1}+0.019\Delta\textrm{lgold}_{t-1}+e_{2t}
+%\end{align*}}
 
 \end{enumerate}
 \item \begin{enumerate}
